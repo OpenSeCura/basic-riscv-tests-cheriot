@@ -1,12 +1,12 @@
 # Copyright (c) 2012-2015, The Regents of the University of California. All rights reserved.
 # Copyright 2026 Google LLC
 # SPDX-License-Identifier: BSD-3-Clause
+# See LICENSE for license details.
 #
 # MODIFIED FOR CHERIOT: 
 # - CHERIoT runs on the RV32E base integer instruction set, which only has 16 registers (x0 to x15).
 # - The original test used the `t3` register (`x28`), which is invalid in RV32E.
 # - Replaced all instances of `t3` with `t0` (`x5`) to make it RV32E compliant.
-# See LICENSE for license details.
 
 #*****************************************************************************
 # ma_data.S

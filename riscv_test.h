@@ -1,6 +1,7 @@
 /*
  * Copyright 2026 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
+ * See LICENSE for license details.
  */
 
 #pragma once
