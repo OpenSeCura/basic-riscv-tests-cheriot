@@ -1,3 +1,7 @@
+# Copyright (c) 2012-2015, The Regents of the University of California. All rights reserved.
+# Copyright 2026 Google LLC
+# SPDX-License-Identifier: BSD-3-Clause
+#
 # MODIFIED FOR CHERIOT: 
 # - The integer `auipc` and its `lla` pseudo-instruction are removed from the CHERIoT ISA.
 # - Rewrote the test to use `auipcc` + `cincoffset` to explicitly generate capabilities.

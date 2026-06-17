@@ -1,3 +1,7 @@
+# Copyright (c) 2012-2015, The Regents of the University of California. All rights reserved.
+# Copyright 2026 Google LLC
+# SPDX-License-Identifier: BSD-3-Clause
+#
 # MODIFIED FOR CHERIOT: Replaced integer memory load/stores with capability ops (clh, csh) and jalr with cjalr to perform capability-safe self-modifying code tests.
 # See LICENSE for license details.
 

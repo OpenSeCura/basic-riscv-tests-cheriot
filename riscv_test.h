@@ -1,5 +1,9 @@
-#ifndef CHERIOT_TEST_H
-#define CHERIOT_TEST_H
+/*
+ * Copyright 2026 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#pragma once
 
 #define TESTNUM x3
 #define RVTEST_RV32U
@@ -77,5 +81,3 @@ trap_vector: \
 
 #define RVTEST_DATA_BEGIN .align 4;
 #define RVTEST_DATA_END
-
-#endif
