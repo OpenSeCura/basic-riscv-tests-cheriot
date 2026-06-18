@@ -8,9 +8,8 @@ SECTIONS
   . = 0x80001000;
   .tohost : { *(.tohost) }
   . = 0x80002000;
-  .text : { *(.text) }
-  .test_start : { *(.test_start) }
-  .data : { *(.data) }
+  .text : { *(.text) *(.text.test_start) }
+  .data : { _data_start = .; *(.data) }
   .bss : { *(.bss) }
   _end = .;
 }

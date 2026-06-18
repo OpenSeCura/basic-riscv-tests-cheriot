@@ -297,7 +297,7 @@ test_ ## testnum: \
     TEST_CASE( testnum, x14, result, \
       la  x2, base; \
       li  x1, result; \
-      la  x15, 7f; /* Tell the exception handler how to skip this test. */ \
+      la_pcc  x15, 7f; /* Tell the exception handler how to skip this test. */ \
       store_inst x1, offset(x2); \
       load_inst x14, offset(x2); \
       j 8f; \
@@ -452,7 +452,7 @@ test_ ## testnum: \
 test_ ## testnum: \
     li  TESTNUM, testnum; \
     li  x4, 0; \
-1:  la  x6, 2f; \
+1:  la_pcc  x6, 2f; \
     TEST_INSERT_NOPS_ ## nop_cycles \
     inst x6; \
     bne x0, TESTNUM, fail; \
@@ -464,7 +464,7 @@ test_ ## testnum: \
 test_ ## testnum: \
     li  TESTNUM, testnum; \
     li  x4, 0; \
-1:  la  x6, 2f; \
+1:  la_pcc  x6, 2f; \
     TEST_INSERT_NOPS_ ## nop_cycles \
     inst c13, c6, 0; \
     bne x0, TESTNUM, fail; \

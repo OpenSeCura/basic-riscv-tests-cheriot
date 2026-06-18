@@ -34,7 +34,7 @@ linkaddr_2:
   j fail
 
 target_2:
-  la  x2, linkaddr_2
+  la_pcc  x2, linkaddr_2
   bne x2, x4, fail
 
   #-------------------------------------------------------------

@@ -19,18 +19,18 @@ RVTEST_RV64U
 RVTEST_CODE_BEGIN
 
 li a3, 111
-la ca2, insn
+la a2, insn
 clh a0, 0(ca2)
 clh a1, 2(ca2)
 
 # test I$ hit
 .align 6
-la ct0, 2f
+la t0, 2f
 csh a0, 0(ct0)
 csh a1, 2(ct0)
 fence.i
 
-la ca5, 2f
+la_pcc a5, 2f
 cjalr ct1, ca5, 0
 TEST_CASE( 2, a3, 444, nop )
 
@@ -39,13 +39,13 @@ li a4, 100
 1: addi a4, a4, -1
 bnez a4, 1b
 
-la ct0, 3f
+la t0, 3f
 csh a0, 0(ct0)
 csh a1, 2(ct0)
 fence.i
 
 .align 6
-la ca5, 3f
+la_pcc a5, 3f
 cjalr ct1, ca5, 0
 TEST_CASE( 3, a3, 777, nop )
 

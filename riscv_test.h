@@ -6,11 +6,11 @@
 
 #pragma once
 
-#define TESTNUM x3
+#define TESTNUM x9
 #define RVTEST_RV32U
 #define RVTEST_RV64U
 
-.macro la reg, symbol
+.macro la_pcc reg, symbol
 .L1\@:
   auipcc \reg, %pcrel_hi(\symbol)
   cincoffset \reg, \reg, %pcrel_lo(.L1\@)
@@ -21,6 +21,11 @@
   addi \reg, \reg, %lo(\symbol)
 .endm
 
+.macro la reg, symbol
+  la_abs \reg, \symbol
+  csetaddr \reg, c3, \reg
+.endm
+
 .macro init_regs symbol
   la_abs x2, \symbol
   cspecialr c1, mtcc
@@ -29,7 +34,6 @@
 
   li x1, 0
   li x2, 0
-  li x3, 0
   li x4, 0
   li x5, 0
   li x6, 0
@@ -52,14 +56,16 @@ tohost: .dword 0; \
 .size tohost, 8; \
 \
 .section .data, "aw", @progbits; \
-.size data, 0x1000; \
 \
-.section .test_start, "ax", @progbits; \
+.section .text.test_start, "ax", @progbits; \
 .global start; \
 .p2align 2; \
 .type start,@function; \
 start: \
-  init_regs trap_vector
+  init_regs trap_vector; \
+  cspecialr c3, mtdc; \
+  la_abs x10, _data_start; \
+  csetaddr c3, c3, x10
 
 #define RVTEST_PASS \
   li gp, 1; \
