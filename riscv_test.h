@@ -68,7 +68,7 @@ start: \
   csetaddr c3, c3, x10
 
 #define RVTEST_PASS \
-  li gp, 1; \
+  li TESTNUM, 1; \
   j write_tohost
 
 #define RVTEST_FAIL \
@@ -79,11 +79,11 @@ write_tohost: \
   la_abs a3, tohost; \
   cspecialr ca4, mtdc; \
   csetaddr ca4, ca4, a3; \
-  csw gp, 0(ca4); \
+  csw TESTNUM, 0(ca4); \
 1: cj 1b; \
 .p2align 3; \
 trap_vector: \
-  li gp, 1337; \
+  li TESTNUM, 1337; \
   j write_tohost
 
 #define RVTEST_DATA_BEGIN .align 4;
