@@ -1,3 +1,7 @@
+# Copyright 2026 Google LLC
+# SPDX-License-Identifier: BSD-3-Clause
+# See LICENSE for license details.
+
 LLVM_DIR := ~/work/Cheriot/llvm-project/builds/cheriot-llvm
 CXX := $(LLVM_DIR)/bin/clang
 CXXOBJDUMP := $(LLVM_DIR)/bin/llvm-objdump
