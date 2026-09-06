@@ -4,12 +4,19 @@ ENTRY(start)
 SECTIONS
 {
   . = 0x80000000;
-  .text.init : { *(.text.init) }
-  . = 0x80001000;
+  .text : {
+    *(.text.init)
+    *(.text.test_start)
+    *(.text)
+  }
+  . = ALIGN(8);
+  .data : {
+    _data_start = .;
+    *(.data)
+  }
+  . = ALIGN(8);
   .tohost : { *(.tohost) }
-  . = 0x80002000;
-  .text : { *(.text) *(.text.test_start) }
-  .data : { _data_start = .; *(.data) }
+  . = ALIGN(8);
   .bss : { *(.bss) }
   _end = .;
 }
