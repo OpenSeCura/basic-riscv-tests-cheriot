@@ -33,7 +33,7 @@ RVTEST_CODE_BEGIN
 
   TEST_CASE( 10, x5, 0x0000000000ff00ff, \
     la  x1, tdat; \
-    addi x1, x1, -32; \
+    cincoffset x1, x1, -32; \
     lw x5, 32(x1); \
   )
 
@@ -41,7 +41,7 @@ RVTEST_CODE_BEGIN
 
   TEST_CASE( 11, x5, 0xffffffffff00ff00, \
     la  x1, tdat; \
-    addi x1, x1, -3; \
+    cincoffset x1, x1, -3; \
     lw x5, 7(x1); \
   )
 

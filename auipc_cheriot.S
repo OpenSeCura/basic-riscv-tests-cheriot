@@ -24,8 +24,8 @@ RVTEST_CODE_BEGIN
 
   TEST_CASE(2, a0, 10000, \
     .align 3; \
-    auipcc ca0, 2; \
-    cincoffset ca0, ca0, 0x710; \
+    auipcc ca0, 4; \
+    cincoffset ca0, ca0, 0x71c; \
     cjal ca1, 1f; \
     1: cgetaddr a0, ca0; \
     cgetaddr a1, ca1; \
@@ -34,8 +34,8 @@ RVTEST_CODE_BEGIN
 
   TEST_CASE(3, a0, -10000, \
     .align 3; \
-    auipcc ca0, 0xffffe; \
-    cincoffset ca0, ca0, -0x710; \
+    auipcc ca0, 0xffffc; \
+    cincoffset ca0, ca0, -0x704; \
     cjal ca1, 1f; \
     1: cgetaddr a0, ca0; \
     cgetaddr a1, ca1; \

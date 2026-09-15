@@ -36,8 +36,9 @@ test_ ## testnum: \
 #define LOAD_PTR ld
 #define STORE_PTR sd
 #else
-#define LOAD_PTR lw
-#define STORE_PTR sw
+#### This is CHERIoT's
+#define LOAD_PTR clc
+#define STORE_PTR csc
 #endif
 
 #-----------------------------------------------------------------------
