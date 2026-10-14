@@ -1,3 +1,6 @@
+// Copyright (c) 2012-2015, The Regents of the University of California. All rights reserved.
+// Copyright 2026 Google LLC
+// SPDX-License-Identifier: BSD-3-Clause
 // See LICENSE for license details.
 
 #ifndef __TEST_MACROS_SCALAR_H
